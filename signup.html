@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup | ShopEase</title>
+<style>
+body{
+  font-family:Poppins,sans-serif;
+  
+  height:100vh;display:flex;align-items:center;justify-content:center;margin:0;
+}
+.container{
+  background:#fff;padding:40px 35px;border-radius:12px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.15);width:320px;text-align:center;
+}
+h2{color:#2874f0;margin-bottom:25px;}
+input{
+  width:100%;padding:12px;margin:10px 0;border-radius:6px;
+  border:1px solid #ccc;outline:none;font-size:15px;
+}
+button{
+  width:100%;padding:12px;background:#2874f0;color:#fff;
+  border:0;border-radius:6px;font-size:16px;cursor:pointer;
+}
+button:hover{background:#185adb;}
+.links{margin-top:15px;font-size:14px;}
+a{color:#2874f0;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Signup</h2>
+  <input type="text" id="username" placeholder="Create Username" required>
+  <input type="password" id="password" placeholder="Create Password" required>
+  <button onclick="signup()">Sign Up</button>
+  <div class="links">
+    <p><a href="login.html">Already have an account? Login</a></p>
+  </div>
+</div>
+
+<script>
+function signup(){
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+  if(user && pass){
+    localStorage.setItem("user",user);
+    localStorage.setItem("pass",pass);
+    alert("Signup successful!");
+    window.location.href="login.html";
+  }else{
+    alert("Please fill all fields");
+  }
+}
+</script>
+</body>
+</html>
